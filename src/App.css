@@ -1,38 +1,148 @@
-.App {
-  text-align: center;
+/* Static colors to use for the overall layout and design */
+:root {
+  --daily-max-color: #2ca25f; 
+  --daily-min-color: #a6cee3; 
+  --active-color: #333;
+  --border-color: #888; 
+  --button-bg: #f4f4f4;
+  --button-hover-bg: #e6e6e6;
+  --page-bg: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.app {
+  padding: 16px 24px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app h1 {
+  font-size: 22px;
+  margin: 0 0 12px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app h2 {
+  font-size: 16px;
+  margin: 24px 0 8px;
+}
+
+.loading {
+  padding: 24px;
+}
+
+.controls {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 12px;
+  padding: 8px 0;
+  background: var(--page-bg);
 }
 
-.App-link {
-  color: #61dafb;
+.level-button {
+  padding: 6px 14px;
+  font-size: 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: var(--button-bg);
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.level-button:hover {
+  background: var(--button-hover-bg);
+}
+
+.level-button.active {
+  background: var(--active-color);
+  border-color: var(--active-color);
+  color: #fff;
+}
+
+.axis text {
+  font-size: 11px;
+}
+
+
+.daily-line {
+  fill: none;
+  stroke-width: 1.5;
+  pointer-events: none; 
+}
+
+.daily-max {
+  stroke: var(--daily-max-color);
+}
+
+.daily-min {
+  stroke: var(--daily-min-color);
+}
+
+/* Small text key explaining the two line colors */
+.line-key {
+  font-size: 13px;
+  margin: 0 0 8px;
+}
+
+.key-max {
+  color: var(--daily-max-color);
+  font-weight: bold;
+}
+
+.key-min {
+  color: var(--daily-min-color);
+  font-weight: bold;
+}
+
+/* Legend */
+
+.legend-label {
+  font-size: 12px;
+}
+
+/* "Color by" heading of the max/min filter */
+.legend-title {
+  font-weight: bold;
+}
+
+/* TempTypeFilter */
+
+.temp-option {
+  cursor: pointer;
+}
+
+.temp-option:focus {
+  outline: none;
+}
+
+.temp-option-hit {
+  fill: transparent;
+}
+
+/* Radio circle: hollow when off, dark dot when on (matches the active button color) */
+.temp-radio {
+  fill: var(--page-bg);
+  stroke: var(--border-color);
+  stroke-width: 1;
+}
+
+.temp-option:hover .temp-radio,
+.temp-option:focus-visible .temp-radio {
+  stroke: var(--active-color);
+  stroke-width: 1.5;
+}
+
+.temp-radio-dot {
+  fill: var(--active-color);
+}
+
+.tooltip {
+  position: fixed;
+  pointer-events: none; 
+  padding: 8px 12px;
+  background: var(--page-bg);
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  font-size: 12px;
+  white-space: nowrap;
 }
