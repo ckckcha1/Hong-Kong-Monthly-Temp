@@ -1,8 +1,6 @@
 # Hong Kong Temperature Heatmap
 
-CSCE 679 Data Visualization – Assignment 1
-
-An interactive year/month heatmap of Hong Kong's daily temperature data, built with React and D3.
+CSCE 679 Data Visualization: year/month heatmap of Hong Kong's daily temperature data, built with React and D3
 
 ## Getting Started
 
@@ -33,5 +31,5 @@ src/
 ## Built With
 
 - [React](https://react.dev/)
-- [D3.js](https://d3js.org/) v7
+- [D3.js](https://d3js.org/) 
 - [Create React App](https://create-react-app.dev/)
