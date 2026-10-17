@@ -18,13 +18,13 @@ npm start
 
 ```
 src/
-├── App.js               # Top-level component: loads data, holds shared state, switches levels, shows the tooltip
-├── Heatmap.js           # Year × month matrix: scales, axes, cells, and Level 2 mini line charts
-├── Legend.js            # Color legend (color boxes and end labels)
-├── TempTypeFilter.js    # Max/min radio filter shown under the legend
-├── data.js              # Loads, parses, and groups the CSV into monthly records
-├── config.js            # All shared settings: sizes, colors, temperature types, year count
-├── App.css              # Styles, with shared colors defined as CSS variables
+├── App.js  
+├── App.css               
+├── Heatmap.js          
+├── Legend.js           
+├── TempTypeFilter.js   
+├── data.js              
+├── config.js                  
 └── temperature_daily.csv
 ```
 
